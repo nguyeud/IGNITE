@@ -17,13 +17,13 @@ const Maps: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/Reference" />
                     </IonButtons>
-                    <IonTitle>Agents</IonTitle>
+                    <IonTitle>Maps</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
                 <IonHeader collapse="condense">
                     <IonToolbar>
-                        <IonTitle size="large">Agents</IonTitle>
+                        <IonTitle size="large">Maps</IonTitle>
                     </IonToolbar>
                 </IonHeader>
             </IonContent>
