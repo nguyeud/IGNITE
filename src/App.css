@@ -1,0 +1,13 @@
+/* Containers */
+.content-container  {
+    padding-left: 2rem;
+}
+
+/* Typography */
+p {
+    font-size: .8rem;
+}
+
+.info-text {
+    color: #444444;
+}
