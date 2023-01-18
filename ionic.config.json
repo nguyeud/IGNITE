@@ -1,0 +1,7 @@
+{
+  "name": "IGNITE",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
