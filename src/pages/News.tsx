@@ -1,36 +1,29 @@
-import React from "react";
 import {
     IonContent,
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar,
-    IonButtons,
-    IonBackButton
+    IonToolbar
 } from '@ionic/react';
 import '../App.css';
 
-const Agents: React.FC<any> = (props) => {
+const News: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonButtons slot="start">
-                        <IonBackButton defaultHref="/Reference" />
-                    </IonButtons>
-                    <IonTitle>Agents</IonTitle>
+                    <IonTitle>News</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
                 <IonHeader collapse="condense">
                     <IonToolbar>
-                        <IonTitle size="large">Agents</IonTitle>
+                        <IonTitle size="large">News</IonTitle>
                     </IonToolbar>
                 </IonHeader>
             </IonContent>
-            Hello, world!
         </IonPage>
     );
 };
 
-export default React.memo(Agents);
+export default News;

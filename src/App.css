@@ -1,6 +1,13 @@
 /* Containers */
-.content-container  {
-    padding-left: 2rem;
+.container-text  {
+    padding: 0 1rem;
+}
+
+/* */
+
+/* Borders */
+.border-md {
+    border-radius: .4rem !important;
 }
 
 /* Typography */
@@ -8,6 +15,6 @@ p {
     font-size: .8rem;
 }
 
-.info-text {
+.text-info {
     color: #444444;
 }

@@ -1,21 +1,15 @@
-import { Redirect, Route } from 'react-router-dom';
+// React imports
+import { Route } from 'react-router-dom';
 import {
   IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-  setupIonicReact
+  setupIonicReact,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { person, play, newspaper, albums, cog } from 'ionicons/icons';
-import Profile from './pages/Profile';
-// import Career from './pages/Career';
-// import News from './pages/News';
-import Reference from './pages/Reference';
-// import Settings from './pages/Settings';
+
+// Import root content for tabs
+import TabRoot from './pages/TabRoot';
+
+// Import CSS
 import './App.css';
 
 /* Core CSS required for Ionic components to work properly */
@@ -40,54 +34,18 @@ import './theme/variables.css';
 setupIonicReact();
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/Profile">
-            <Profile />
-          </Route>
-          <Route exact path="/Profile">
-            <Profile />
-          </Route>
-          <Route exact path="/Profile">
-            <Profile />
-          </Route>
-          <Route exact path="/Reference">
-            <Reference />
-          </Route>
-          <Route exact path="/Profile">
-            <Profile />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/Profile" />
-          </Route>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="Profile" href="/Profile">
-            <IonIcon icon={person} />
-            <IonLabel>Profile</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Profile" href="/Profile">
-            <IonIcon icon={play} />
-            <IonLabel>Career</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Profile" href="/Profile">
-            <IonIcon icon={newspaper} />
-            <IonLabel>News</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Reference" href="/Reference">
-            <IonIcon icon={albums} />
-            <IonLabel>Reference</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Profile" href="/Profile">
-            <IonIcon icon={cog} />
-            <IonLabel>Settings</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
+  // <IonApp>
+  //   <IonReactRouter>
+
+  //   </IonReactRouter>
+  // </IonApp>
+  <IonReactRouter>
+    <div className="App">
+      <IonApp>
+        <Route path="/" component={TabRoot} />
+      </IonApp>
+    </div>
+  </IonReactRouter>
 );
 
 export default App;

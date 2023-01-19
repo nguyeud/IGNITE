@@ -1,13 +1,30 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useHistory } from "react-router";
 import {
-  IonNav
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonNavLink,
 } from '@ionic/react';
-import '../App.css';
-import ReferenceContainer from '../components/ReferenceContainer';
+
 import { createStore, get, set, clear } from '../services/IonicStorage';
 import { getVersion, getAgents, getMaps, getWeapons, getWeaponSkins } from '../services/VALORANT-API';
 
+import Agents from '../pages/Agents';
+import Maps from '../pages/Maps';
+
+import '../App.css';
+
 const Reference: React.FC = () => {
+  const history = useHistory();
+
+  const [version, setVersion] = useState<string>('');
+
   const APIKeys = ["version", "agents", "maps", "weapons", "weaponSkins"];
   const APIFetches = [getVersion(), getAgents(), getMaps(), getWeapons(), getWeaponSkins()];
 
@@ -23,7 +40,7 @@ const Reference: React.FC = () => {
         if (!exists) {
           const APIData = await APIFetches[i];
           set(APIKeys[i], APIData);
-        } 
+        }
       }
 
       // After all API data have been fetched, check if version is outdated
@@ -41,7 +58,7 @@ const Reference: React.FC = () => {
         fetchAPIs();
       }
     }
-    
+
     // Set up Ionic Storage
     const setupStore = async () => {
       // Initialize/create DB
@@ -50,11 +67,54 @@ const Reference: React.FC = () => {
       fetchAPIs();
     }
 
+    const getVersionFromDB = async () => {
+      const version = await get("version");
+      setVersion(version);
+    }
+
     setupStore();
+    getVersionFromDB();
   }, []);
 
+  const versionContent = <div className="container-text"><p className="text-info"><b>Version</b> {version}</p></div>;
+
   return (
-    <IonNav root={() => <ReferenceContainer />}></IonNav>
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Reference</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonList className="margin-md border-md" inset={true}>
+          <IonItem button detail={true}>
+            <IonLabel onClick={() => history.push("/Agents")}>
+              <p>Agents</p>
+            </IonLabel>
+          </IonItem>
+          <IonItem button detail={true}>
+            <IonLabel onClick={() => history.push("/Maps")}>
+              <p>Maps</p>
+            </IonLabel>
+          </IonItem>
+          <IonItem button detail={true}>
+            <IonLabel>
+              <IonNavLink routerDirection="forward" component={() => <Maps />}>
+                <p>Weapons</p>
+              </IonNavLink>
+            </IonLabel>
+          </IonItem>
+          <IonItem button detail={true}>
+            <IonLabel>
+              <IonNavLink routerDirection="forward" component={() => <Maps />}>
+                <p>Weapon Skins</p>
+              </IonNavLink>
+            </IonLabel>
+          </IonItem>
+        </IonList>
+        {versionContent}
+      </IonContent>
+    </IonPage>
   );
 };
 
