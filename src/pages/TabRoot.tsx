@@ -26,7 +26,7 @@ interface IAppProps { }
 
 const TabRoot: React.FC<IAppProps> = props => {
     return (
-        <IonPage id="main">
+        <IonPage>
             <IonTabs>
                 <IonRouterOutlet>
                     <Route exact path="/Profile" component={Profile} />

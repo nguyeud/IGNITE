@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
     IonContent,
     IonHeader,
@@ -8,9 +9,10 @@ import {
     IonButtons,
     IonBackButton
 } from '@ionic/react';
+
 import '../App.css';
 
-const Agents: React.FC<any> = (props) => {
+const Agents: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
@@ -28,7 +30,6 @@ const Agents: React.FC<any> = (props) => {
                     </IonToolbar>
                 </IonHeader>
             </IonContent>
-            Hello, world!
         </IonPage>
     );
 };

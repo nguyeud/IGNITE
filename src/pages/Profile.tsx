@@ -10,6 +10,7 @@ import {
     IonCardSubtitle,
     IonCardTitle
 } from '@ionic/react';
+
 import '../App.css';
 
 const Profile: React.FC = () => {

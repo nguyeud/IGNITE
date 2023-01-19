@@ -1,76 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useHistory } from "react-router";
+
 import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonNavLink
+    IonItem,
+    IonLabel,
+    IonList,
 } from '@ionic/react';
-import '../App.css';
-import { get } from '../services/IonicStorage';
-import Agents from '../pages/Agents';
-import Maps from '../pages/Maps';
 
-function ReferenceContainer() {
-  const [version, setVersion] = useState<string>('');
+interface ContainerProps { }
 
-  useEffect(() => {
-    const getVersionFromDB = async () => {
-      const version = await get("version");
-      setVersion(version);
-    }
+const ReferenceContainer: React.FC<ContainerProps> = () => {
+    const history = useHistory();
 
-    getVersionFromDB();
-  }, []);
-
-  const versionContent = <div className="content-container"><p className="info-text"><b>Version</b> {version}</p></div>;
-
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Reference</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonList inset={true}>
-          <IonItem button detail={true}>
-            <IonLabel>
-              <IonNavLink routerDirection="forward" component={() => <Agents />}>
-                <p>Agents</p>
-              </IonNavLink>
-            </IonLabel>
-          </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel>
-              <IonNavLink routerDirection="forward" component={() => <Maps />}>
-                <p>Maps</p>
-              </IonNavLink>
-            </IonLabel>
-          </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel>
-              <IonNavLink routerDirection="forward" component={() => <Maps />}>
-                <p>Weapons</p>
-              </IonNavLink>
-            </IonLabel>
-          </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel>
-              <IonNavLink routerDirection="forward" component={() => <Maps />}>
-                <p>Weapon Skins</p>
-              </IonNavLink>
-            </IonLabel>
-          </IonItem>
+    return (
+        <IonList className="margin-md border-md" inset={true}>
+            <IonItem button detail={true}>
+                <IonLabel onClick={() => history.push("/Agents")}>
+                    <p>Agents</p>
+                </IonLabel>
+            </IonItem>
+            <IonItem button detail={true}>
+                <IonLabel onClick={() => history.push("/Maps")}>
+                    <p>Maps</p>
+                </IonLabel>
+            </IonItem>
+            <IonItem button detail={true}>
+                <IonLabel onClick={() => history.push("/Maps")}>
+                    <p>Weapons</p>
+                </IonLabel>
+            </IonItem>
+            <IonItem button detail={true}>
+                <IonLabel onClick={() => history.push("/Maps")}>
+                    <p>Weapon Skins</p>
+                </IonLabel>
+            </IonItem>
         </IonList>
-        {versionContent}
-      </IonContent>
-    </IonPage>
-  );
+    );
 };
 
 export default ReferenceContainer;

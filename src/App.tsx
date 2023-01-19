@@ -34,17 +34,10 @@ import './theme/variables.css';
 setupIonicReact();
 
 const App: React.FC = () => (
-  // <IonApp>
-  //   <IonReactRouter>
-
-  //   </IonReactRouter>
-  // </IonApp>
   <IonReactRouter>
-    <div className="App">
       <IonApp>
         <Route path="/" component={TabRoot} />
       </IonApp>
-    </div>
   </IonReactRouter>
 );
 

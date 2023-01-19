@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
     IonContent,
     IonHeader,
@@ -7,6 +9,7 @@ import {
     IonButtons,
     IonBackButton
 } from '@ionic/react';
+
 import '../App.css';
 
 const Maps: React.FC = () => {
@@ -31,4 +34,4 @@ const Maps: React.FC = () => {
     );
 };
 
-export default Maps;
+export default React.memo(Maps);;

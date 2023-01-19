@@ -1,28 +1,22 @@
 import { useEffect, useState } from 'react';
-import { useHistory } from "react-router";
+
 import {
   IonContent,
   IonHeader,
   IonPage,
   IonTitle,
-  IonToolbar,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonNavLink,
+  IonToolbar
 } from '@ionic/react';
+
+import ReferenceContainer from '../components/ReferenceContainer';
+import VersionContainer from '../components/VersionContainer';
 
 import { createStore, get, set, clear } from '../services/IonicStorage';
 import { getVersion, getAgents, getMaps, getWeapons, getWeaponSkins } from '../services/VALORANT-API';
 
-import Agents from '../pages/Agents';
-import Maps from '../pages/Maps';
-
 import '../App.css';
 
 const Reference: React.FC = () => {
-  const history = useHistory();
-
   const [version, setVersion] = useState<string>('');
 
   const APIKeys = ["version", "agents", "maps", "weapons", "weaponSkins"];
@@ -76,8 +70,6 @@ const Reference: React.FC = () => {
     getVersionFromDB();
   }, []);
 
-  const versionContent = <div className="container-text"><p className="text-info"><b>Version</b> {version}</p></div>;
-
   return (
     <IonPage>
       <IonHeader>
@@ -86,29 +78,13 @@ const Reference: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonList className="margin-md border-md" inset={true}>
-          <IonItem button detail={true}>
-            <IonLabel onClick={() => history.push("/Agents")}>
-              <p>Agents</p>
-            </IonLabel>
-          </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel onClick={() => history.push("/Maps")}>
-              <p>Maps</p>
-            </IonLabel>
-          </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel onClick={() => history.push("/Maps")}>
-              <p>Weapons</p>
-            </IonLabel>
-          </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel onClick={() => history.push("/Maps")}>
-              <p>Weapon Skins</p>
-            </IonLabel>
-          </IonItem>
-        </IonList>
-        {versionContent}
+        <ReferenceContainer />
+        <VersionContainer version={version}/>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Reference</IonTitle>
+          </IonToolbar>
+        </IonHeader>
       </IonContent>
     </IonPage>
   );

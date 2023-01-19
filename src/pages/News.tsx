@@ -5,6 +5,7 @@ import {
     IonTitle,
     IonToolbar
 } from '@ionic/react';
+
 import '../App.css';
 
 const News: React.FC = () => {
