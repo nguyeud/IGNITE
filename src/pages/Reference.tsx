@@ -98,17 +98,13 @@ const Reference: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem button detail={true}>
-            <IonLabel>
-              <IonNavLink routerDirection="forward" component={() => <Maps />}>
-                <p>Weapons</p>
-              </IonNavLink>
+            <IonLabel onClick={() => history.push("/Maps")}>
+              <p>Weapons</p>
             </IonLabel>
           </IonItem>
           <IonItem button detail={true}>
-            <IonLabel>
-              <IonNavLink routerDirection="forward" component={() => <Maps />}>
-                <p>Weapon Skins</p>
-              </IonNavLink>
+            <IonLabel onClick={() => history.push("/Maps")}>
+              <p>Weapon Skins</p>
             </IonLabel>
           </IonItem>
         </IonList>

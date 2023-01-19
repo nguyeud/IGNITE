@@ -1,14 +1,18 @@
-/* Containers */
-.container-text  {
-    padding: 0 1rem;
-}
-
-/* */
-
 /* Borders */
 .border-md {
     border-radius: .4rem !important;
 }
+
+/* Containers */
+.container-text  {
+    margin: 0 1rem;
+}
+
+/* Margins */
+.margin-md {
+    margin: 1rem;
+}
+
 
 /* Typography */
 p {
