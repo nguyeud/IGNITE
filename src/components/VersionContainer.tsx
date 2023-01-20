@@ -1,8 +1,8 @@
-interface ContainerProps {
+interface VersionData {
     version: string;
 }
 
-const VersionContainer: React.FC<ContainerProps> = ({version}) => {
+const VersionContainer: React.FC<VersionData> = ({version}) => {
     return (
         <div className="container-text">
             <p className="text-info">

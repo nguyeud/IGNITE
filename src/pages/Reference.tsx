@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
 
+import { useHistory } from "react-router";
+
 import {
   IonContent,
   IonHeader,
   IonPage,
   IonTitle,
-  IonToolbar
+  IonToolbar,
+  IonItem,
+  IonLabel,
+  IonList
 } from '@ionic/react';
 
-import ReferenceContainer from '../components/ReferenceContainer';
 import VersionContainer from '../components/VersionContainer';
 
 import { createStore, get, set, clear } from '../services/IonicStorage';
@@ -17,6 +21,8 @@ import { getVersion, getAgents, getMaps, getWeapons, getWeaponSkins } from '../s
 import '../App.css';
 
 const Reference: React.FC = () => {
+  const history = useHistory();
+
   const [version, setVersion] = useState<string>('');
 
   const APIKeys = ["version", "agents", "maps", "weapons", "weaponSkins"];
@@ -78,8 +84,29 @@ const Reference: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <ReferenceContainer />
-        <VersionContainer version={version}/>
+        <IonList>
+          <IonItem button detail={true}>
+            <IonLabel onClick={() => history.push("/Agents")}>
+              Agents
+            </IonLabel>
+          </IonItem>
+          <IonItem button detail={true}>
+            <IonLabel onClick={() => history.push("/Maps")}>
+              Maps
+            </IonLabel>
+          </IonItem>
+          <IonItem button detail={true}>
+            <IonLabel onClick={() => history.push("/Maps")}>
+              Weapons
+            </IonLabel>
+          </IonItem>
+          <IonItem button detail={true}>
+            <IonLabel onClick={() => history.push("/Maps")}>
+              Weapon Skins
+            </IonLabel>
+          </IonItem>
+        </IonList>
+        <VersionContainer version={version} />
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Reference</IonTitle>

@@ -36,6 +36,7 @@ const TabRoot: React.FC<IAppProps> = props => {
                     <Route exact path="/Agents" component={Agents} />
                     <Route exact path="/Maps" component={Maps} />
                     <Route exact path="/Settings" component={Settings} />
+                    <Route exact path="/" render={() => <Redirect to="/Profile" />} />
                 </IonRouterOutlet>
                 <IonTabBar slot="bottom">
                     <IonTabButton tab="Profile" href="/Profile">

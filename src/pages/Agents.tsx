@@ -1,4 +1,6 @@
-import React from "react";
+import { useHistory } from "react-router";
+
+import React, { useEffect, useState } from 'react';
 
 import {
     IonContent,
@@ -7,12 +9,67 @@ import {
     IonTitle,
     IonToolbar,
     IonButtons,
-    IonBackButton
+    IonBackButton,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonThumbnail
 } from '@ionic/react';
 
+import AgentContainer from "../components/AgentContainer";
+
+import { createStore, get } from '../services/IonicStorage';
+
 import '../App.css';
+import { image } from "ionicons/icons";
 
 const Agents: React.FC = () => {
+    const history = useHistory();
+
+    const [agents, setAgents] = useState<any[]>([]);
+
+    useEffect(() => {
+        const setupStore = async () => {
+            await createStore("IGNITEDB");
+            getAgentsFromDB();
+        }
+
+        const getAgentsFromDB = async () => {
+            const agents = await get("agents");
+            setAgents(agents);
+        }
+
+        setupStore();
+    }, []);
+
+    agents.sort(function (a, b) {
+        return a.displayName.localeCompare(b.displayName);
+    });
+
+    const agentsData = agents.map(item => {
+        if (item.isPlayableCharacter === true) {
+          return (
+            <IonItem key={item.uuid} id={item.uuid} button detail={true}>
+              <IonThumbnail slot="start">
+                <img alt="agent display icon" src={item.displayIcon} />
+              </IonThumbnail>
+              <IonLabel>
+                {item.displayName}
+              </IonLabel>
+              <AgentContainer 
+                uuid={item.uuid} 
+                img={item.fullPortrait}
+                name={item.displayName}
+                description={item.description}
+                role={item.role}
+                abilities={item.abilities}
+                backgroundColors={item.backgroundGradientColors}
+              />
+            </IonItem>
+          );
+        }
+      });
+
     return (
         <IonPage>
             <IonHeader>
@@ -24,6 +81,9 @@ const Agents: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
+                <IonList>
+                    {agentsData}
+                </IonList>
                 <IonHeader collapse="condense">
                     <IonToolbar>
                         <IonTitle size="large">Agents</IonTitle>
