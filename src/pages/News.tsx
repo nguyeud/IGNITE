@@ -11,7 +11,7 @@ import '../App.css';
 const News: React.FC = () => {
     return (
         <IonPage>
-            <IonHeader>
+            <IonHeader className="ion-no-border">
                 <IonToolbar>
                     <IonTitle>News</IonTitle>
                 </IonToolbar>

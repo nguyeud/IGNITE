@@ -16,12 +16,11 @@ import {
     IonThumbnail
 } from '@ionic/react';
 
-import AgentContainer from "../components/AgentContainer";
+import Agent from "../components/Agent";
 
 import { createStore, get } from '../services/IonicStorage';
 
 import '../App.css';
-import { image } from "ionicons/icons";
 
 const Agents: React.FC = () => {
     const history = useHistory();
@@ -56,7 +55,7 @@ const Agents: React.FC = () => {
               <IonLabel>
                 {item.displayName}
               </IonLabel>
-              <AgentContainer 
+              <Agent
                 uuid={item.uuid} 
                 img={item.fullPortrait}
                 name={item.displayName}
@@ -72,7 +71,7 @@ const Agents: React.FC = () => {
 
     return (
         <IonPage>
-            <IonHeader>
+            <IonHeader className="ion-no-border">
                 <IonToolbar>
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/Reference" />
@@ -81,7 +80,7 @@ const Agents: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                <IonList>
+                <IonList className="border-radius-md" inset={true}>
                     {agentsData}
                 </IonList>
                 <IonHeader collapse="condense">

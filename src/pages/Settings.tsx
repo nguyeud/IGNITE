@@ -11,7 +11,7 @@ import '../App.css';
 const Settings: React.FC = () => {
     return (
         <IonPage>
-            <IonHeader>
+            <IonHeader className="ion-no-border">
                 <IonToolbar>
                     <IonTitle>Settings</IonTitle>
                 </IonToolbar>

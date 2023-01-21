@@ -21,12 +21,12 @@ interface AgentData {
   backgroundColors: Array<string>
 }
 
-const AgentContainer: React.FC<AgentData> = ({uuid, img, name, description, role, abilities, backgroundColors}) => {
+const Agent: React.FC<AgentData> = ({uuid, img, name, description, role, abilities, backgroundColors}) => {
   const modal = useRef<HTMLIonModalElement>(null);
 
   return (
       <IonModal ref={modal} trigger={uuid}>
-        <IonHeader>
+        <IonHeader className="ion-no-border">
           <IonToolbar>
             <IonTitle>{name}</IonTitle>
             <IonButtons slot="start">
@@ -37,12 +37,10 @@ const AgentContainer: React.FC<AgentData> = ({uuid, img, name, description, role
           </IonToolbar>
         </IonHeader>
         <IonContent>
-          <IonItem>
-            Hello!
-          </IonItem>
+          Hello!
         </IonContent>
       </IonModal>
   );
 };
 
-export default AgentContainer;
+export default Agent;

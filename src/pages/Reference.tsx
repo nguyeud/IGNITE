@@ -10,10 +10,13 @@ import {
   IonToolbar,
   IonItem,
   IonLabel,
-  IonList
+  IonList,
+  IonIcon
 } from '@ionic/react';
 
-import VersionContainer from '../components/VersionContainer';
+import { person, map, cut, pricetag } from 'ionicons/icons';
+
+import Version from '../components/Version';
 
 import { createStore, get, set, clear } from '../services/IonicStorage';
 import { getVersion, getAgents, getMaps, getWeapons, getWeaponSkins } from '../services/VALORANT-API';
@@ -77,36 +80,32 @@ const Reference: React.FC = () => {
   }, []);
 
   return (
-    <IonPage>
-      <IonHeader>
+    <IonPage id="main-content">
+      <IonHeader className="ion-no-border">
         <IonToolbar>
           <IonTitle>Reference</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonList>
-          <IonItem button detail={true}>
-            <IonLabel onClick={() => history.push("/Agents")}>
-              Agents
-            </IonLabel>
+        <IonList className="border-radius-md" inset={true}>
+          <IonItem button detail={true} onClick={() => history.push("/Agents")}>
+            <IonIcon className="label-icon" icon={person} />
+            <IonLabel className="label-list">Agents</IonLabel>
           </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel onClick={() => history.push("/Maps")}>
-              Maps
-            </IonLabel>
+          <IonItem button detail={true} onClick={() => history.push("/Maps")}>
+            <IonIcon className="label-icon" icon={map} />
+            <IonLabel className="label-list">Maps</IonLabel>
           </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel onClick={() => history.push("/Maps")}>
-              Weapons
-            </IonLabel>
+          <IonItem button detail={true} onClick={() => history.push("/Maps")}>
+            <IonIcon className="label-icon" icon={cut} />
+            <IonLabel className="label-list">Weapons</IonLabel>
           </IonItem>
-          <IonItem button detail={true}>
-            <IonLabel onClick={() => history.push("/Maps")}>
-              Weapon Skins
-            </IonLabel>
+          <IonItem button detail={true} onClick={() => history.push("/Maps")}>
+            <IonIcon className="label-icon" icon={pricetag} />
+            <IonLabel className="label-list">Weapon Skins</IonLabel>
           </IonItem>
         </IonList>
-        <VersionContainer version={version} />
+        <Version version={version} />
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Reference</IonTitle>

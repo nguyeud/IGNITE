@@ -41,23 +41,23 @@ const TabRoot: React.FC<IAppProps> = props => {
                 <IonTabBar slot="bottom">
                     <IonTabButton tab="Profile" href="/Profile">
                         <IonIcon icon={person} />
-                        <IonLabel>Profile</IonLabel>
+                        <IonLabel className="label-tab">Profile</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="Career" href="/Career">
                         <IonIcon icon={play} />
-                        <IonLabel>Career</IonLabel>
+                        <IonLabel className="label-tab">Career</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="News" href="/News">
                         <IonIcon icon={newspaper} />
-                        <IonLabel>News</IonLabel>
+                        <IonLabel className="label-tab">News</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="Reference" href="/Reference">
                         <IonIcon icon={albums} />
-                        <IonLabel>Reference</IonLabel>
+                        <IonLabel className="label-tab">Reference</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="Settings" href="/Settings">
                         <IonIcon icon={cog} />
-                        <IonLabel>Settings</IonLabel>
+                        <IonLabel className="label-tab">Settings</IonLabel>
                     </IonTabButton>
                 </IonTabBar>
             </IonTabs>

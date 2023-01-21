@@ -2,7 +2,7 @@ interface VersionData {
     version: string;
 }
 
-const VersionContainer: React.FC<VersionData> = ({version}) => {
+const Version: React.FC<VersionData> = ({version}) => {
     return (
         <div className="container-text">
             <p className="text-info">
@@ -12,4 +12,4 @@ const VersionContainer: React.FC<VersionData> = ({version}) => {
     );
 };
 
-export default VersionContainer;
+export default Version;

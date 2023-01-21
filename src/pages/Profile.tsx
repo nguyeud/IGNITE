@@ -8,7 +8,9 @@ import {
     IonCardContent,
     IonCardHeader,
     IonCardSubtitle,
-    IonCardTitle
+    IonCardTitle,
+    IonButtons,
+    IonMenuButton
 } from '@ionic/react';
 
 import '../App.css';
@@ -16,13 +18,16 @@ import '../App.css';
 const Profile: React.FC = () => {
     return (
         <IonPage>
-            <IonHeader>
+            <IonHeader className="ion-no-border">
                 <IonToolbar>
+                    <IonButtons slot="start">
+                        <IonMenuButton></IonMenuButton>
+                    </IonButtons>
                     <IonTitle>Profile</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                <IonCard className="border-md margin-md">
+                <IonCard>
                     <img alt="player card" src="https://media.valorant-api.com/playercards/1c0a3c3b-40bd-ed6b-c374-e2887d8a16fe/wideart.png" />
                     <IonCardHeader>
                         <IonCardTitle>haru #wolf</IonCardTitle>

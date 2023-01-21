@@ -1,16 +1,6 @@
-/* Borders */
-.border-md {
-    border-radius: .4rem !important;
-}
-
 /* Containers */
 .container-text  {
     margin: 0 1rem;
-}
-
-/* Margins */
-.margin-md {
-    margin: 1rem;
 }
 
 /* Typography */
@@ -20,4 +10,30 @@ p {
 
 .text-info {
     color: #444444;
+}
+
+/* Ionic UI Components */
+ion-card {
+    border: 1px solid #dddddd;
+    border-radius: .4rem !important;
+    box-shadow: none !important;
+    margin: 1rem;
+}
+
+/* List UI Component */
+.label-tab {
+    font-size: .6rem;
+    font-weight: semibold;
+}
+
+.label-list {
+    font-size: .8rem !important;
+    font-weight: semibold !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Ionic UI Components */
+    ion-card {
+        border: 1px solid #222222 !important;
+    }
 }
