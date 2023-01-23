@@ -9,7 +9,7 @@ p {
 }
 
 .text-info {
-    color: #444444;
+    color: #555555;
 }
 
 /* Ionic UI Components */
@@ -41,7 +41,7 @@ ion-list {
 }
 
 .list-thumbnail-img {   /* IonThumbnail Image in IonList */
-    border-radius: .4rem;
+    border-radius: 50%;
     border: 1px solid #dddddd;
 }
 
@@ -51,6 +51,11 @@ ion-list {
 }
 
 @media (prefers-color-scheme: dark) {
+    /* Typography */
+    .text-info {
+        color: #bbbbbb;
+    }
+
     /* Ionic UI Components */
     ion-card {
         border: 1px solid #333333;

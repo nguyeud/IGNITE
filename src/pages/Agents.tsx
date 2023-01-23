@@ -47,27 +47,31 @@ const Agents: React.FC = () => {
 
     const agentsData = agents.map(item => {
         if (item.isPlayableCharacter === true) {
-          return (
-            <IonItem key={item.uuid} id={item.uuid} button detail={true}>
-              <IonThumbnail slot="start" className="list-thumbnail">
-                <img className="list-thumbnail-img" alt="agent display icon" src={item.displayIcon} />
-              </IonThumbnail>
-              <IonLabel className="label-list" padding-vertical>
-                {item.displayName}
-              </IonLabel>
-              <Agent
-                uuid={item.uuid} 
-                img={item.fullPortrait}
-                name={item.displayName}
-                description={item.description}
-                role={item.role}
-                abilities={item.abilities}
-                backgroundColors={item.backgroundGradientColors}
-              />
-            </IonItem>
-          );
+            const imgStyle = {
+                backgroundColor: "#" + item.backgroundGradientColors[0],
+              };
+
+            return (
+                <IonItem key={item.uuid} id={item.uuid} button detail={true}>
+                    <IonThumbnail slot="start" className="list-thumbnail">
+                        <img className="list-thumbnail-img" style={imgStyle} alt="agent display icon" src={item.displayIcon} />
+                    </IonThumbnail>
+                    <IonLabel className="label-list" padding-vertical>
+                        {item.displayName}
+                    </IonLabel>
+                    <Agent
+                        uuid={item.uuid}
+                        img={item.fullPortrait}
+                        name={item.displayName}
+                        description={item.description}
+                        role={item.role}
+                        abilities={item.abilities}
+                        backgroundColors={item.backgroundGradientColors}
+                    />
+                </IonItem>
+            );
         }
-      });
+    });
 
     return (
         <IonPage>
