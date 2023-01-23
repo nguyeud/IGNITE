@@ -2,11 +2,11 @@ interface VersionData {
     version: string;
 }
 
-const Version: React.FC<VersionData> = ({version}) => {
+const Version: React.FC<VersionData> = (props: VersionData) => {
     return (
         <div className="container-text">
             <p className="text-info">
-                <b>Version</b> {version}
+                <b>Version</b> {props.version}
             </p>
         </div>
     );

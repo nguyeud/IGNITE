@@ -27,7 +27,7 @@ const Profile: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                <IonCard>
+                <IonCard className="margin-1 border-solid-lightgray border-radius-04 box-shadow-none">
                     <img alt="player card" src="https://media.valorant-api.com/playercards/1c0a3c3b-40bd-ed6b-c374-e2887d8a16fe/wideart.png" />
                     <IonCardHeader>
                         <IonCardTitle>haru #wolf</IonCardTitle>

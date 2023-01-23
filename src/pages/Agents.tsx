@@ -1,5 +1,3 @@
-import { useHistory } from "react-router";
-
 import React, { useEffect, useState } from 'react';
 
 import {
@@ -23,8 +21,6 @@ import { createStore, get } from '../services/IonicStorage';
 import '../App.css';
 
 const Agents: React.FC = () => {
-    const history = useHistory();
-
     const [agents, setAgents] = useState<any[]>([]);
 
     useEffect(() => {
@@ -49,14 +45,20 @@ const Agents: React.FC = () => {
         if (item.isPlayableCharacter === true) {
             const imgStyle = {
                 backgroundColor: "#" + item.backgroundGradientColors[0],
-              };
+            };
+
+            const ability1 = item.abilities[0];
+            const ability2 = item.abilities[0];
+            const grenade = item.abilities[0];
+            const ultimate = item.abilities[0];
+            const passive = item.abilities[0];
 
             return (
                 <IonItem key={item.uuid} id={item.uuid} button detail={true}>
-                    <IonThumbnail slot="start" className="list-thumbnail">
-                        <img className="list-thumbnail-img" style={imgStyle} alt="agent display icon" src={item.displayIcon} />
+                    <IonThumbnail className="margin-vertical-06 margin-right-1" slot="start">
+                        <img className="border-solid-lightgray border-radius-circle" style={imgStyle} alt="agent display icon" src={item.displayIcon} />
                     </IonThumbnail>
-                    <IonLabel className="label-list" padding-vertical>
+                    <IonLabel>
                         {item.displayName}
                     </IonLabel>
                     <Agent
@@ -65,7 +67,11 @@ const Agents: React.FC = () => {
                         name={item.displayName}
                         description={item.description}
                         role={item.role}
-                        abilities={item.abilities}
+                        ability1={item.abilities[0]}
+                        ability2={item.abilities[1]}
+                        ability3={item.abilities[2]}
+                        ultimate={item.abilities[3]}
+                        passive={passive}
                         backgroundColors={item.backgroundGradientColors}
                     />
                 </IonItem>
@@ -84,7 +90,7 @@ const Agents: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                <IonList className="border-radius-md" inset={true}>
+                <IonList className="border-radius-04" inset={true}>
                     {agentsData}
                 </IonList>
                 <IonHeader collapse="condense">

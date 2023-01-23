@@ -1,6 +1,40 @@
+/* Borders */
+.border-solid-lightgray {
+    border: 1px solid #dddddd;
+}
+.border-radius-04 {
+    border-radius: .4rem !important;
+}
+.border-radius-circle {
+    border-radius: 50%;
+}
+
+/* Box Shadow */
+.box-shadow-none {
+    box-shadow: none !important;
+}
+
 /* Containers */
 .container-text  {
     margin: 0 2rem;
+}
+
+/* Margins */
+.margin-1 {
+    margin: 1rem;
+}
+.margin-right-1 {
+    margin-right: 1rem;
+}
+.margin-vertical-06 {
+    margin-top: .6rem;
+    margin-bottom:.6rem;
+}
+
+/* Paddings */
+.padding-vertical-06 {
+    padding-top: .6rem;
+    padding-bottom: .6rem;
 }
 
 /* Typography */
@@ -12,57 +46,14 @@ p {
     color: #555555;
 }
 
-/* Ionic UI Components */
-ion-card {
-    border: 1px solid #dddddd;
-    border-radius: .4rem;
-    box-shadow: none;
-    margin: 1rem;
-}
-
-ion-list {
-    border-radius: .4rem !important;
-}
-
-/* List UI Component */
-.list-icon {   /* IonIcon in IonList */
-    margin-right: 1rem;
-}
-
-.list-label {   /* IonLabel in IonList */
-    font-size: .8rem !important;
-    font-weight: semibold !important;
-    padding: 1rem 0;
-}
-
-.list-thumbnail {   /* IonThumbnail in IonList */
-    margin: 1rem 0;
-    margin-right: 1rem;
-}
-
-.list-thumbnail-img {   /* IonThumbnail Image in IonList */
-    border-radius: 50%;
-    border: 1px solid #dddddd;
-}
-
-.tab-label {    /* IonLabel in IonTabBar */
-    font-size: .6rem;
-    font-weight: semibold;
-}
-
 @media (prefers-color-scheme: dark) {
+    /* Borders */
+    .border-solid-lightgray {
+        border: 1px solid #333333;
+    }
+
     /* Typography */
     .text-info {
         color: #bbbbbb;
-    }
-
-    /* Ionic UI Components */
-    ion-card {
-        border: 1px solid #333333;
-    }
-
-    /* List UI Component */
-    .list-thumbnail-img {
-        border: 1px solid #333333;
     }
 }

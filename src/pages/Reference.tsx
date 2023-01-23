@@ -10,8 +10,8 @@ import {
   IonToolbar,
   IonItem,
   IonLabel,
-  IonList,
-  IonIcon
+  IonIcon,
+  IonList
 } from '@ionic/react';
 
 import { personOutline, mapOutline, cutOutline, pricetagOutline } from 'ionicons/icons';
@@ -79,6 +79,20 @@ const Reference: React.FC = () => {
     getVersionFromDB();
   }, []);
 
+  const index = [0, 1, 2, 3];
+  const pages = ["/Agents", "/Maps", "/Maps", "/Maps"];
+  const pageLabels = ["Agents", "Maps", "Weapons", "Weapons Skins"];
+  const icons = [personOutline, mapOutline, cutOutline, pricetagOutline];
+
+  const listItems = index.map(index => {
+    return (
+      <IonItem key={pageLabels[index]} button detail={true} onClick={() => history.push(pages[index])}>
+        <IonIcon className="margin-right-1" icon={icons[index]} />
+        <IonLabel className="padding-vertical-06">{pageLabels[index]}</IonLabel>
+      </IonItem>
+    );
+  });
+
   return (
     <IonPage id="main-content">
       <IonHeader className="ion-no-border">
@@ -87,23 +101,8 @@ const Reference: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonList className="border-radius-md" inset={true}>
-          <IonItem button detail={true} onClick={() => history.push("/Agents")}>
-            <IonIcon className="list-icon" icon={personOutline} />
-            <IonLabel className="list-label">Agents</IonLabel>
-          </IonItem>
-          <IonItem button detail={true} onClick={() => history.push("/Maps")}>
-            <IonIcon className="list-icon" icon={mapOutline} />
-            <IonLabel className="list-label">Maps</IonLabel>
-          </IonItem>
-          <IonItem button detail={true} onClick={() => history.push("/Maps")}>
-            <IonIcon className="list-icon" icon={cutOutline} />
-            <IonLabel className="list-label">Weapons</IonLabel>
-          </IonItem>
-          <IonItem button detail={true} onClick={() => history.push("/Maps")}>
-            <IonIcon className="list-icon" icon={pricetagOutline} />
-            <IonLabel className="list-label">Weapon Skins</IonLabel>
-          </IonItem>
+        <IonList className="border-radius-04" inset={true}>
+          {listItems}
         </IonList>
         <Version version={version} />
         <IonHeader collapse="condense">
