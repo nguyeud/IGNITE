@@ -14,7 +14,7 @@ import {
   IonIcon
 } from '@ionic/react';
 
-import { person, map, cut, pricetag } from 'ionicons/icons';
+import { personOutline, mapOutline, cutOutline, pricetagOutline } from 'ionicons/icons';
 
 import Version from '../components/Version';
 
@@ -89,20 +89,20 @@ const Reference: React.FC = () => {
       <IonContent fullscreen>
         <IonList className="border-radius-md" inset={true}>
           <IonItem button detail={true} onClick={() => history.push("/Agents")}>
-            <IonIcon className="label-icon" icon={person} />
-            <IonLabel className="label-list">Agents</IonLabel>
+            <IonIcon className="list-icon" icon={personOutline} />
+            <IonLabel className="list-label">Agents</IonLabel>
           </IonItem>
           <IonItem button detail={true} onClick={() => history.push("/Maps")}>
-            <IonIcon className="label-icon" icon={map} />
-            <IonLabel className="label-list">Maps</IonLabel>
+            <IonIcon className="list-icon" icon={mapOutline} />
+            <IonLabel className="list-label">Maps</IonLabel>
           </IonItem>
           <IonItem button detail={true} onClick={() => history.push("/Maps")}>
-            <IonIcon className="label-icon" icon={cut} />
-            <IonLabel className="label-list">Weapons</IonLabel>
+            <IonIcon className="list-icon" icon={cutOutline} />
+            <IonLabel className="list-label">Weapons</IonLabel>
           </IonItem>
           <IonItem button detail={true} onClick={() => history.push("/Maps")}>
-            <IonIcon className="label-icon" icon={pricetag} />
-            <IonLabel className="label-list">Weapon Skins</IonLabel>
+            <IonIcon className="list-icon" icon={pricetagOutline} />
+            <IonLabel className="list-label">Weapon Skins</IonLabel>
           </IonItem>
         </IonList>
         <Version version={version} />

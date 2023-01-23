@@ -9,7 +9,7 @@ import {
     IonTabs
 } from '@ionic/react';
 
-import { person, play, newspaper, albums, cog } from 'ionicons/icons';
+import { personOutline, playOutline, newspaperOutline, albumsOutline, cogOutline } from 'ionicons/icons';
 
 import Profile from './Profile';
 import Career from './Career';
@@ -40,24 +40,24 @@ const TabRoot: React.FC<IAppProps> = props => {
                 </IonRouterOutlet>
                 <IonTabBar slot="bottom">
                     <IonTabButton tab="Profile" href="/Profile">
-                        <IonIcon icon={person} />
-                        <IonLabel className="label-tab">Profile</IonLabel>
+                        <IonIcon icon={personOutline} />
+                        <IonLabel className="tab-label">Profile</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="Career" href="/Career">
-                        <IonIcon icon={play} />
-                        <IonLabel className="label-tab">Career</IonLabel>
+                        <IonIcon icon={playOutline} />
+                        <IonLabel className="tab-label">Career</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="News" href="/News">
-                        <IonIcon icon={newspaper} />
-                        <IonLabel className="label-tab">News</IonLabel>
+                        <IonIcon icon={newspaperOutline} />
+                        <IonLabel className="tab-label">News</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="Reference" href="/Reference">
-                        <IonIcon icon={albums} />
-                        <IonLabel className="label-tab">Reference</IonLabel>
+                        <IonIcon icon={albumsOutline} />
+                        <IonLabel className="tab-label">Reference</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="Settings" href="/Settings">
-                        <IonIcon icon={cog} />
-                        <IonLabel className="label-tab">Settings</IonLabel>
+                        <IonIcon icon={cogOutline} />
+                        <IonLabel className="tab-label">Settings</IonLabel>
                     </IonTabButton>
                 </IonTabBar>
             </IonTabs>

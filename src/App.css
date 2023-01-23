@@ -1,6 +1,6 @@
 /* Containers */
 .container-text  {
-    margin: 0 1rem;
+    margin: 0 2rem;
 }
 
 /* Typography */
@@ -21,14 +21,24 @@ ion-card {
 }
 
 /* List UI Component */
-.label-tab {
-    font-size: .6rem;
-    font-weight: semibold;
+.list-icon {   /* IonIcon in IonList */
+    margin-right: 1rem;
 }
 
-.label-list {
+.list-label {   /* IonLabel in IonList */
     font-size: .8rem !important;
     font-weight: semibold !important;
+    padding: 1rem 0;
+}
+
+.list-thumbnail {
+    margin: 1rem 0;
+    margin-right: 1rem;
+}
+
+.tab-label {    /* IonLabel in IonTabBar */
+    font-size: .6rem;
+    font-weight: semibold;
 }
 
 @media (prefers-color-scheme: dark) {

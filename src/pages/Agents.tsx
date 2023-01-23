@@ -49,10 +49,10 @@ const Agents: React.FC = () => {
         if (item.isPlayableCharacter === true) {
           return (
             <IonItem key={item.uuid} id={item.uuid} button detail={true}>
-              <IonThumbnail slot="start">
+              <IonThumbnail slot="start" className="list-thumbnail">
                 <img alt="agent display icon" src={item.displayIcon} />
               </IonThumbnail>
-              <IonLabel>
+              <IonLabel className="label-list" padding-vertical>
                 {item.displayName}
               </IonLabel>
               <Agent
