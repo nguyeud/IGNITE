@@ -50,7 +50,7 @@ const Agents: React.FC = () => {
           return (
             <IonItem key={item.uuid} id={item.uuid} button detail={true}>
               <IonThumbnail slot="start" className="list-thumbnail">
-                <img alt="agent display icon" src={item.displayIcon} />
+                <img className="list-thumbnail-img" alt="agent display icon" src={item.displayIcon} />
               </IonThumbnail>
               <IonLabel className="label-list" padding-vertical>
                 {item.displayName}

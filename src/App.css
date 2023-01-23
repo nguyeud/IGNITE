@@ -15,9 +15,13 @@ p {
 /* Ionic UI Components */
 ion-card {
     border: 1px solid #dddddd;
-    border-radius: .4rem !important;
-    box-shadow: none !important;
+    border-radius: .4rem;
+    box-shadow: none;
     margin: 1rem;
+}
+
+ion-list {
+    border-radius: .4rem !important;
 }
 
 /* List UI Component */
@@ -31,9 +35,14 @@ ion-card {
     padding: 1rem 0;
 }
 
-.list-thumbnail {
+.list-thumbnail {   /* IonThumbnail in IonList */
     margin: 1rem 0;
     margin-right: 1rem;
+}
+
+.list-thumbnail-img {   /* IonThumbnail Image in IonList */
+    border-radius: .4rem;
+    border: 1px solid #dddddd;
 }
 
 .tab-label {    /* IonLabel in IonTabBar */
@@ -44,6 +53,11 @@ ion-card {
 @media (prefers-color-scheme: dark) {
     /* Ionic UI Components */
     ion-card {
-        border: 1px solid #222222 !important;
+        border: 1px solid #333333;
+    }
+
+    /* List UI Component */
+    .list-thumbnail-img {
+        border: 1px solid #333333;
     }
 }
