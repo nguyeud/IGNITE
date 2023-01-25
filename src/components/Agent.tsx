@@ -7,17 +7,9 @@ import {
   IonButtons,
   IonModal,
   IonButton,
-  IonLabel,
-  IonList,
-  IonItem,
-  IonThumbnail,
   IonSegment,
-  IonSegmentButton,
-  IonIcon
+  IonSegmentButton
 } from '@ionic/react';
-
-import { home, heart, pin, star, call, globe, basket, barbell, trash, person } from 'ionicons/icons';
-import { render } from '@testing-library/react';
 
 interface AgentData {
   uuid: string,
@@ -74,9 +66,13 @@ const Agent: React.FC<AgentData> = (props: AgentData) => {
 
   const renderAbilityList = abilityList.map(item => {
     if (item.displayName !== null) {
+      const icon = 
+        (item.displayIcon === null) ? 
+          "P" : 
+          <img alt="agent ability" style={{ width: '1.4rem' }} src={item.displayIcon} />;
       return (
         <IonSegmentButton key={item.slot} value={item.slot}>
-          <img alt="agent ability" style={{ width: '1.4rem' }} src={item.displayIcon} />
+          {icon}
         </IonSegmentButton>
       );
     }
