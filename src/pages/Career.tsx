@@ -17,11 +17,6 @@ const Career: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <IonTitle size="large">Career</IonTitle>
-                    </IonToolbar>
-                </IonHeader>
             </IonContent>
         </IonPage>
     );

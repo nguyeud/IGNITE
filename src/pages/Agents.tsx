@@ -11,7 +11,8 @@ import {
     IonItem,
     IonLabel,
     IonList,
-    IonThumbnail
+    IonThumbnail,
+    IonAvatar
 } from '@ionic/react';
 
 import Agent from "../components/Agent";
@@ -43,21 +44,19 @@ const Agents: React.FC = () => {
 
     const agentsData = agents.map(item => {
         if (item.isPlayableCharacter === true) {
-            const imgStyle = {
-                backgroundColor: "#" + item.backgroundGradientColors[0],
-            };
-
-            const ability1 = item.abilities[0];
-            const ability2 = item.abilities[0];
-            const grenade = item.abilities[0];
-            const ultimate = item.abilities[0];
-            const passive = item.abilities[0];
+            const passive = (item.abilities.find((o: { slot: string; }) => o.slot === 'Passive') == undefined) ? {
+                "slot": "Passive",
+                "displayName": null,
+                "description": null,
+                "displayIcon": null
+            } :
+                item.abilities.find((o: { slot: string; }) => o.slot === 'Passive');
 
             return (
                 <IonItem key={item.uuid} id={item.uuid} button detail={true}>
-                    <IonThumbnail className="margin-vertical-06 margin-right-1" slot="start">
-                        <img className="border-solid-lightgray border-radius-circle" style={imgStyle} alt="agent display icon" src={item.displayIcon} />
-                    </IonThumbnail>
+                    <IonAvatar slot="start">
+                        <img style={{backgroundColor: "#" + item.backgroundGradientColors[0]}} alt="agent display icon" src={item.displayIcon} />
+                    </IonAvatar>
                     <IonLabel>
                         {item.displayName}
                     </IonLabel>
@@ -67,12 +66,13 @@ const Agents: React.FC = () => {
                         name={item.displayName}
                         description={item.description}
                         role={item.role}
-                        ability1={item.abilities[0]}
-                        ability2={item.abilities[1]}
-                        ability3={item.abilities[2]}
-                        ultimate={item.abilities[3]}
+                        ability1={item.abilities.find((o: { slot: string; }) => o.slot === 'Ability1')}
+                        ability2={item.abilities.find((o: { slot: string; }) => o.slot === 'Ability2')}
+                        ability3={item.abilities.find((o: { slot: string; }) => o.slot === 'Grenade')}
+                        ultimate={item.abilities.find((o: { slot: string; }) => o.slot === 'Ultimate')}
                         passive={passive}
                         backgroundColors={item.backgroundGradientColors}
+                        background={item.background}
                     />
                 </IonItem>
             );
@@ -90,14 +90,9 @@ const Agents: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                <IonList className="border-radius-04" inset={true}>
+                <IonList inset={true}>
                     {agentsData}
                 </IonList>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <IonTitle size="large">Agents</IonTitle>
-                    </IonToolbar>
-                </IonHeader>
             </IonContent>
         </IonPage>
     );

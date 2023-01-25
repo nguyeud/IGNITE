@@ -1,59 +1,77 @@
-/* Borders */
-.border-solid-lightgray {
-    border: 1px solid #dddddd;
-}
-.border-radius-04 {
-    border-radius: .4rem !important;
-}
-.border-radius-circle {
-    border-radius: 50%;
-}
-
-/* Box Shadow */
-.box-shadow-none {
-    box-shadow: none !important;
-}
-
 /* Containers */
-.container-text  {
-    margin: 0 2rem;
+.container-img {
+    margin: 1rem 1rem;
+}
+.container-text {
+    margin: 0 1rem;
 }
 
-/* Margins */
-.margin-1 {
-    margin: 1rem;
-}
-.margin-right-1 {
-    margin-right: 1rem;
-}
-.margin-vertical-06 {
-    margin-top: .6rem;
-    margin-bottom:.6rem;
-}
-
-/* Paddings */
-.padding-vertical-06 {
-    padding-top: .6rem;
-    padding-bottom: .6rem;
+/* Image */
+.img-text-agent {
+    height: 22rem;
+    object-fit: cover;
 }
 
 /* Typography */
-p {
-    font-size: .8rem;
+.text-title {
+    color: rgb(38, 38, 38);
+    padding: 0;
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
+.text-subtitle {
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgb(115, 115, 115);
+    margin-top: .5rem;
+}
+
+.text-normal, .text-info {
+    font-size: .875rem;
+    line-height: 1.3125rem;
 }
 
 .text-info {
-    color: #555555;
+    color: rgb(115, 115, 115);
+}
+
+/* Ionic UI Components */
+ion-card,
+ion-list {
+    border-radius: .4rem !important;
+}
+
+ion-card {
+    border: 1px solid #dddddd;
+    box-shadow: none;
+    margin: 1rem;
+}
+
+/* List UI Component */
+.list-icon {
+    /* IonIcon in IonList */
+    margin-right: 1rem;
+    width: 1.4rem;
 }
 
 @media (prefers-color-scheme: dark) {
-    /* Borders */
-    .border-solid-lightgray {
+    /* Typography */
+    .text-title {
+        color: rgb(219, 219, 219);
+    }
+
+    .text-subtitle, .text-info {
+        color: rgb(148, 148, 148);
+    }
+
+    /* Ionic UI Components */
+    ion-card {
         border: 1px solid #333333;
     }
 
-    /* Typography */
-    .text-info {
-        color: #bbbbbb;
+    /* List UI Component */
+    .list-thumbnail-icon {
+        background-color: rgb(38, 38, 38);
     }
 }

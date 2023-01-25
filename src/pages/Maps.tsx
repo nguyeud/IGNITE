@@ -24,11 +24,6 @@ const Maps: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <IonTitle size="large">Maps</IonTitle>
-                    </IonToolbar>
-                </IonHeader>
             </IonContent>
         </IonPage>
     );

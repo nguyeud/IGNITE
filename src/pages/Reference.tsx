@@ -87,8 +87,8 @@ const Reference: React.FC = () => {
   const listItems = index.map(index => {
     return (
       <IonItem key={pageLabels[index]} button detail={true} onClick={() => history.push(pages[index])}>
-        <IonIcon className="margin-right-1" icon={icons[index]} />
-        <IonLabel className="padding-vertical-06">{pageLabels[index]}</IonLabel>
+        <IonIcon className="list-icon" icon={icons[index]} />
+        <IonLabel>{pageLabels[index]}</IonLabel>
       </IonItem>
     );
   });
@@ -101,15 +101,10 @@ const Reference: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonList className="border-radius-04" inset={true}>
+        <IonList inset={true}>
           {listItems}
         </IonList>
         <Version version={version} />
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Reference</IonTitle>
-          </IonToolbar>
-        </IonHeader>
       </IonContent>
     </IonPage>
   );

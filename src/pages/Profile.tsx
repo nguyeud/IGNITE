@@ -37,11 +37,6 @@ const Profile: React.FC = () => {
                         Here's a small text description for the card content. Nothing more, nothing less.
                     </IonCardContent>
                 </IonCard>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <IonTitle size="large">Profile</IonTitle>
-                    </IonToolbar>
-                </IonHeader>
             </IonContent>
         </IonPage>
     );
