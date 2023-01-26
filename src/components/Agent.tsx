@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 
 import {
   IonContent,
@@ -111,7 +111,7 @@ const Agent: React.FC<AgentData> = (props: AgentData) => {
               backgroundRepeat: 'no-repeat',
               borderRadius: '.4rem'
             }}>
-            <img className="img-text-agent" alt="agent portrait" src={props.img} />
+            <img className="img-text-square" style={{height: '22rem'}} alt="agent portrait" src={props.img} />
           </div>
         </div>
         <div id="agent-info" className="container-text">

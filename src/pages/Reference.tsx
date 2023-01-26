@@ -77,7 +77,7 @@ const Reference: React.FC = () => {
 
     setupStore();
     getVersionFromDB();
-  }, []);
+  });
 
   const index = [0, 1, 2, 3];
   const pages = ["/Agents", "/Maps", "/Maps", "/Maps"];

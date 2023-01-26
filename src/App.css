@@ -7,8 +7,11 @@
 }
 
 /* Image */
-.img-text-agent {
-    height: 22rem;
+.img-text-square, .img-text-rectangle {
+    border-radius: .4rem;
+}
+
+.img-text-square {
     object-fit: cover;
 }
 
@@ -53,6 +56,10 @@ ion-card {
     /* IonIcon in IonList */
     margin-right: 1rem;
     width: 1.4rem;
+}
+
+.list-thumbnail {
+    border-radius: .4rem;
 }
 
 @media (prefers-color-scheme: dark) {

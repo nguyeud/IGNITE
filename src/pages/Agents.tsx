@@ -11,7 +11,6 @@ import {
     IonItem,
     IonLabel,
     IonList,
-    IonThumbnail,
     IonAvatar
 } from '@ionic/react';
 
@@ -44,7 +43,7 @@ const Agents: React.FC = () => {
 
     const agentsData = agents.map(item => {
         if (item.isPlayableCharacter === true) {
-            const passive = (item.abilities.find((o: { slot: string; }) => o.slot === 'Passive') == undefined) ? {
+            const passive = (item.abilities.find((o: { slot: string; }) => o.slot === 'Passive') === undefined) ? {
                 "slot": "Passive",
                 "displayName": null,
                 "description": null,
